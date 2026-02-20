@@ -1,0 +1,2 @@
+https://enzopss.github.io/Portfolio_angular/
+ng deploy --base-href="https://enzopss.github.io/Portfolio_angular/"
