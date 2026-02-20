@@ -48,8 +48,8 @@
     height: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
-    border: 3px solid rgba(100, 255, 218, 0.5);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    border: 3px solid rgba(152, 100, 255, 0.5);
+    box-shadow: 0 0 20px rgba(177, 100, 255, 0.3);
 }
 
 .profile h2 {
