@@ -1,0 +1,128 @@
+/* ===============================
+   SIDEBAR STYLE - Enzo POUSSE
+   =============================== */
+
+/* Reset léger */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar principale */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    background: rgba(35, 0, 70, 0.85); /* Violet foncé */
+    backdrop-filter: blur(10px); /* Effet glass */
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 40px rgba(120, 0, 255, 0.3);
+}
+
+/* ===============================
+   PROFIL
+   =============================== */
+
+.profile {
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(180, 120, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(50%);
+    transition: 0.3s ease;
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(200, 150, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+
+nav ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+nav ul li {
+    margin: 12px 0;
+}
+
+/* Boutons */
+nav ul li a {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover effet violet clair */
+nav ul li a:hover {
+    border: 2px solid #c084fc; /* violet clair */
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+    background: rgba(192, 132, 252, 0.15);
+    transform: translateX(5px);
+}
+
+/* ===============================
+   SOCIAL LINKS
+   =============================== */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-links a {
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    border-color: #c084fc;
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+    background: rgba(192, 132, 252, 0.2);
+}
+
+/* ===============================
+   COPYRIGHT
+   =============================== */
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.copyright a {
+    color: #c084fc;
+    transition: 0.3s;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
