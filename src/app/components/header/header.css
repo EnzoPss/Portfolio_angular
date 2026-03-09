@@ -1,28 +1,26 @@
-/* ===============================
-   SIDEBAR STYLE - Enzo POUSSE
-   =============================== */
-
-/* Reset léger */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 /* Sidebar principale */
 .sidebar {
     width: 280px;
-    height: 100vh;
-    position: fixed;
-    background: rgba(35, 0, 70, 0.85); /* Violet foncé */
-    backdrop-filter: blur(10px); /* Effet glass */
+    height: fit-content;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+
+    background: rgba(35, 0, 70, 0.85);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     padding: 20px;
     color: white;
+
     box-shadow: 0 0 40px rgba(120, 0, 255, 0.3);
+
+    overflow-y: auto;
 }
 
 /* ===============================
@@ -125,4 +123,40 @@ nav ul li a:hover {
 
 .copyright a:hover {
     text-decoration: underline;
+}
+
+
+/* ===============================
+   SCROLL SIDEBAR
+   =============================== */
+
+.sidebar {
+    overflow-y: auto; /* active le scroll vertical */
+    overflow-x: hidden;
+}
+
+/* Scrollbar personnalisée (Chrome, Edge, Safari) */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #c084fc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(192,132,252,0.8);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+}
+
+/* Firefox */
+.sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: #c084fc rgba(255,255,255,0.05);
 }

@@ -2,10 +2,14 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
+import { Profil } from "./components/profil/profil";
+import { Competences } from "./components/competences/competences";
+import { Parcours } from "./components/parcours/parcours";
+import { Projets } from "./components/projets/projets";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer],
+  imports: [RouterOutlet, Header, Footer, Profil, Competences, Parcours, Projets],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
