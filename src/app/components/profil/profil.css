@@ -1,0 +1,33 @@
+#profil {
+  background: rgba(255, 253, 245, 0.90);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#profil div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#profil h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  color: #1a1a2e;
+}
+
+#profil p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+}

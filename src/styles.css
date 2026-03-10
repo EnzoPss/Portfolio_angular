@@ -1,136 +1,85 @@
-.layout{
-  display: flex;
-}
-
-.main{
-  flex: 1;
-  margin-left: 10px;
-}
-
-h1, h2, h3, p {
-  color: aliceblue;
-}
-
-
-
-
-
-
-
-/* ===== BODY ===== */
+/* ===== BODY & BASE ===== */
 body {
   margin: 0;
   background: radial-gradient(circle at center, #0a0a0f, #020205 70%);
+  overflow-x: hidden;
+  font-family: sans-serif;
 }
+.layout { display: flex; position: relative; }
+.main { flex: 1; margin-left: 10px; }
+h1, h2, h3, p { color: aliceblue; }
 
-/* ===== FOND ANIMÉ ===== */
+/* ===== BACKGROUND ===== */
 .background {
   position: fixed;
-  width: 100%;
-  height: 100vh;
+  inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: -1;
 }
 
-/* ===== FORMES ===== */
-.shape {
-  position: absolute;
-  opacity: 0;
-  animation: floatAndDeform 45s linear infinite;
-}
-
-/* ===== CARRÉS ===== */
-.square {
-  width: 320px;
-  height: 320px;
-  border: 3px solid #00eaff;
-  box-shadow: 0 0 8px #00eaff, 0 0 25px #00eaff, inset 0 0 8px #00eaff;
-}
-
-/* ===== CERCLES ===== */
+/* ===== BASE CIRCLE ===== */
 .circle {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 3px solid #b26cff;
-  box-shadow: 0 0 8px #b26cff, 0 0 25px #b26cff, inset 0 0 8px #b26cff;
-}
-
-/* ===== RECTANGLES ===== */
-.rectangle {
-  width: 400px;
-  height: 200px;
-  border: 3px solid #f97316;
-  box-shadow: 0 0 8px #f97316, 0 0 25px #f97316, inset 0 0 8px #f97316;
-}
-
-/* ===== TRIANGLES ===== */
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 160px solid transparent;
-  border-right: 160px solid transparent;
-  border-bottom: 280px solid #00ffa6;
-  filter: drop-shadow(0 0 8px #00ffa6) drop-shadow(0 0 20px #00ffa6);
-}
-
-/* ===== ÉTOILES ===== */
-.star {
-  position: relative;
-  display: block;
-  color: #facc15;
-  width: 0;
-  height: 0;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid #facc15;
-  border-left: 100px solid transparent;
-  transform: rotate(35deg);
-  filter: drop-shadow(0 0 8px #facc15) drop-shadow(0 0 20px #facc15);
-}
-
-.star::before {
-  content: '';
   position: absolute;
-  top: -45px;
-  left: -100px;
-  width: 0;
-  height: 0;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid #facc15;
-  border-left: 100px solid transparent;
-  transform: rotate(-70deg);
+  border-radius: 50%;
+  transform-origin: center;
+  animation: lavaRise var(--speed) linear infinite;
+  animation-delay: var(--delay);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background: radial-gradient(circle at center, var(--color) 60%, transparent 100%);
+  opacity: 0.55;
+  filter: blur(5px);
+  width: calc(180px * var(--size));
+  height: calc(180px * var(--size));
+  top: 110%;
+  left: var(--left);
 }
 
-/* ===== POSITIONS ET DÉLAIS D’APPARITION ===== */
-.shape:nth-child(1){ left: 10%; top: 100%; animation-delay: 0s; }
-.shape:nth-child(2){ left: 35%; top: 100%; animation-delay: 10s; }
-.shape:nth-child(3){ left: 70%; top: 100%; animation-delay: 20s; }
-.shape:nth-child(4){ left: 20%; top: 100%; animation-delay: 30s; }
-.shape:nth-child(5){ left: 55%; top: 100%; animation-delay: 40s; }
-.shape:nth-child(6){ left: 85%; top: 100%; animation-delay: 50s; }
-.shape:nth-child(7){ left: 25%; top: 100%; animation-delay: 5s; }
-.shape:nth-child(8){ left: 60%; top: 100%; animation-delay: 15s; }
+/* ===== VARIATIONS ===== */
+.circle:nth-child(1)  { --left: 10%; --size: 0.3;  --speed: 16s; --color: #00c8ff; --delay: -2s;  }
+.circle:nth-child(2)  { --left: 30%; --size: 1.6;  --speed: 24s; --color: #7b2fff; --delay: -7s;  }
+.circle:nth-child(3)  { --left: 52%; --size: 0.5;  --speed: 19s; --color: #00ffcc; --delay: -4s;  }
+.circle:nth-child(4)  { --left: 68%; --size: 1.8;  --speed: 27s; --color: #0066ff; --delay: -11s; }
+.circle:nth-child(5)  { --left: 82%; --size: 0.4;  --speed: 21s; --color: #00e5ff; --delay: -1s;  }
+.circle:nth-child(6)  { --left: 3%;  --size: 1.5;  --speed: 17s; --color: #00ffcc; --delay: -9s;  }
+.circle:nth-child(7)  { --left: 22%; --size: 0.25; --speed: 23s; --color: #9b30ff; --delay: -5s;  }
+.circle:nth-child(8)  { --left: 44%; --size: 1.7;  --speed: 20s; --color: #00b4d8; --delay: -13s; }
+.circle:nth-child(9)  { --left: 63%; --size: 0.6;  --speed: 25s; --color: #3d9bff; --delay: -3s;  }
+.circle:nth-child(10) { --left: 88%; --size: 1.8;  --speed: 15s; --color: #00ffaa; --delay: -8s;  }
 
-/* ===== ANIMATION COMBINÉE : MOUVEMENT + DÉFORMATION ===== */
-@keyframes floatAndDeform {
+/* ===== ANIMATION LAMPE À LAVE ===== */
+@keyframes lavaRise {
   0% {
-    transform: translateY(0) rotate(0deg) scale(1,1);
+    transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
     opacity: 0;
   }
+  3% {
+    transform: translateY(-1vh) scaleX(0.965) scaleY(1.05) rotate(25deg);
+    opacity: 0.55;
+  }
   10% {
-    transform: translateY(-10vh) rotate(15deg) scale(1.08,0.92);
-    opacity: 0.5;
+    transform: translateY(-5vh) scaleX(0.955) scaleY(1.06) rotate(80deg);
   }
-  50% {
-    transform: translateY(-70vh) rotate(180deg) scale(0.95,1.05);
-    opacity: 0.5;
+  20% {
+    transform: translateY(-20vh) scaleX(1.04) scaleY(0.97) translateX(-10px) rotate(200deg);
   }
-  90% {
-    transform: translateY(-120vh) rotate(330deg) scale(1.05,0.95);
-    opacity: 0.5;
+  40% {
+    transform: translateY(-40vh) scaleX(0.965) scaleY(1.04) translateX(8px) rotate(400deg);
   }
+  55% {
+    transform: translateY(-55vh) scaleX(1.05) scaleY(0.96) translateX(-6px) rotate(560deg);
+  }
+  60% {
+    transform: translateY(-60vh) scaleX(1.035) scaleY(0.97) translateX(-6px) rotate(650deg);
+  }
+  80% {
+    transform: translateY(-80vh) scaleX(0.97) scaleY(1.035) translateX(7px) rotate(900deg);
+  }
+  92% { opacity: 0.35; }
   100% {
-    transform: translateY(-140vh) rotate(360deg) scale(1,1);
+    transform: translateY(-112vh) scaleX(1) scaleY(1) translateX(0) rotate(1080deg);
     opacity: 0;
   }
 }

@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class Header {
 
+  onMouseEnter(): void {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar?.classList.remove('collapsed');
+  }
+
+  onMouseLeave(): void {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar?.classList.add('collapsed');
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-parcours',
@@ -6,6 +6,20 @@ import { Component } from '@angular/core';
   templateUrl: './parcours.html',
   styleUrl: './parcours.css',
 })
-export class Parcours {
+export class Parcours implements AfterViewInit {
+
+  ngAfterViewInit(): void {
+    const items = document.querySelectorAll('.timeline-item');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    items.forEach(item => observer.observe(item));
+  }
 
 }
