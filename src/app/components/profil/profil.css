@@ -1,15 +1,48 @@
 #profil {
-  background: rgba(255, 253, 245, 0.90);
+  position: relative;
+  border-radius: 20px;
   padding: 24px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+#profil::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(195, 195, 195, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+#profil > * {
+  position: relative;
+  z-index: 1;
+}
+
 #profil div {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 30px;
 }
 
 .profile-img {
@@ -23,11 +56,11 @@
 #profil h2 {
   margin: 0 0 4px 0;
   font-size: 1.2rem;
-  color: #1a1a2e;
+  color: #64448c;
 }
 
 #profil p {
   margin: 0;
   font-size: 0.9rem;
-  color: #444;
+  color: #888888;
 }

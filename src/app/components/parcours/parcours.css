@@ -61,7 +61,7 @@
    CARDS
    =============================== */
 .timeline-card {
-  background: rgba(255, 253, 245, 0.5);
+  background: rgba(255, 253, 245, 0.75);
   backdrop-filter: blur(6px);
   border-radius: 12px;
   padding: 16px;
@@ -160,3 +160,97 @@
 .timeline-item:nth-child(1) .timeline-card { transition-delay: 0s; }
 .timeline-item:nth-child(2) .timeline-card { transition-delay: 0.4s; }
 .timeline-item:nth-child(3) .timeline-card { transition-delay: 0.8s; }
+
+
+/* ===============================
+   MODALE
+   =============================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 8, 48, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 0.8; }
+}
+
+.modal-box {
+  background: rgba(252, 250, 255, 0.7);
+  border-radius: 16px;
+  padding: 32px 28px 24px;
+  width: min(520px, 90vw);
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  box-shadow: 0 20px 60px rgba(123, 47, 255, 0.2);
+  position: relative;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 0.8; }
+}
+
+.modal-box h2 {
+  margin: 0 0 16px;
+  font-size: 1.15rem;
+  color: #1a1a2e;
+  padding-right: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #7b2fff;
+}
+
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #c084fc transparent;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #c084fc;
+  border-radius: 10px;
+}
+
+.modal-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.75;
+  white-space: pre-line;
+}

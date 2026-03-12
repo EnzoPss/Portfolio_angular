@@ -1,8 +1,5 @@
 <div id="parcours">
-
-  <!-- Flèche en bas pointant vers le haut -->
   <div class="timeline-arrow">&#8593;</div>
-
   <div class="timeline">
 
     <div class="timeline-item">
@@ -10,7 +7,7 @@
         <img src="#" alt="Formation 1">
         <h3>BTS SIO - SLAM</h3>
         <p>2024 - 2026</p>
-        <a href="#">Voir plus</a>
+        <a href="#" (click)="openModal(modalBts, $event)">Voir plus</a>
       </div>
       <div class="timeline-dot"></div>
     </div>
@@ -20,7 +17,7 @@
         <img src="#" alt="Formation 2">
         <h3>Baccalauréat</h3>
         <p>2021 - 2024</p>
-        <a href="#">Voir plus</a>
+        <a href="#" (click)="openModal(modalBac, $event)">Voir plus</a>
       </div>
       <div class="timeline-dot"></div>
     </div>
@@ -30,11 +27,40 @@
         <img src="#" alt="Formation 3">
         <h3>Collège</h3>
         <p>2017 - 2021</p>
-        <a href="#">Voir plus</a>
+        <a href="#" (click)="openModal(modalCollege, $event)">Voir plus</a>
       </div>
       <div class="timeline-dot"></div>
     </div>
 
   </div>
-
 </div>
+
+<!-- ======= CONTENUS DES MODALES (éditez ici) ======= -->
+
+<ng-template #modalBts>
+  <h2>BTS SIO - SLAM (2024 - 2026)</h2>
+  <p>Votre texte pour le BTS ici...</p>
+  <p>Vous pouvez ajouter autant de paragraphes que vous voulez.</p>
+</ng-template>
+
+<ng-template #modalBac>
+  <h2>Baccalauréat (2021 - 2024)</h2>
+  <p>Votre texte pour le bac ici...</p>
+</ng-template>
+
+<ng-template #modalCollege>
+  <h2>Collège (2017 - 2021)</h2>
+  <p>Votre texte pour le collège ici...</p>
+</ng-template>
+
+<!-- ======= MODALE ======= -->
+@if (activeTemplate) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-box" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">&#x2715;</button>
+      <div class="modal-body">
+        <ng-container *ngTemplateOutlet="activeTemplate" />
+      </div>
+    </div>
+  </div>
+}
