@@ -1,33 +1,32 @@
 <div id="competences">
-
-
-
-    <p>*Compétences*</p>
-
-
-
   <div class="competences-content">
 
-    <!-- <div class="competences-left">
-      <div class="skills-track-wrapper">
-        <div class="skills-track">
-          
-          <div class="skill-box"><img src="img/angular.png" alt="Angular"></div>
-          <div class="skill-box"><img src="img/typescript.png" alt="TypeScript"></div>
-          <div class="skill-box"><img src="img/html.png" alt="HTML"></div>
-          <div class="skill-box"><img src="img/css.png" alt="CSS"></div>
-          <div class="skill-box"><img src="img/java.png" alt="Java"></div>
-          <div class="skill-box"><img src="img/mysql.png" alt="MySQL"></div>
-          
-          <div class="skill-box"><img src="img/angular.png" alt="Angular"></div>
-          <div class="skill-box"><img src="img/typescript.png" alt="TypeScript"></div>
-          <div class="skill-box"><img src="img/html.png" alt="HTML"></div>
-          <div class="skill-box"><img src="img/css.png" alt="CSS"></div>
-          <div class="skill-box"><img src="img/java.png" alt="Java"></div>
-          <div class="skill-box"><img src="img/mysql.png" alt="MySQL"></div>
+    <div class="carousels-wrapper">
+      <div
+        *ngFor="let category of categories; let i = index"
+        class="carousel-row"
+      >
+        <span class="category-label">{{ category.name }}</span>
+        <div class="skills-track-wrapper">
+          <div
+            class="skills-track"
+            [class.reverse]="i % 2 !== 0"
+            [style.animation-duration]="getAnimDuration(category.images) + 's'"
+            [style.--track-width]="getTrackWidth(category.images)"
+          >
+            <div class="skill-box" *ngFor="let img of repeat(category.images)">
+              <ng-container *ngIf="img.isSeparator; else normalBox">
+                <div class="skill-separator"></div>
+              </ng-container>
+              <ng-template #normalBox>
+                <img [src]="'img/' + img.folder + '/' + img.file" [alt]="img.name" />
+                <span class="skill-label">{{ img.name }}</span>
+              </ng-template>
+            </div>
+          </div>
         </div>
       </div>
-    </div> 
+    </div>
 
     <div class="cv-container">
       <canvas #cvCanvas class="cv-canvas"></canvas>
@@ -38,7 +37,7 @@
         </svg>
         Télécharger mon CV
       </a>
-    </div>-->
+    </div>
 
   </div>
 </div>

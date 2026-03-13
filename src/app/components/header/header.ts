@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header {
+  private isClicking = false;
 
   onMouseEnter(): void {
     const sidebar = document.querySelector('.sidebar');
@@ -14,8 +15,19 @@ export class Header {
   }
 
   onMouseLeave(): void {
+    if (this.isClicking) return; // Ne pas réduire pendant un clic
     const sidebar = document.querySelector('.sidebar');
     sidebar?.classList.add('collapsed');
   }
 
+  onMouseDown(): void {
+    this.isClicking = true;
+  }
+
+  onMouseUp(): void {
+    // Petit délai pour laisser la navigation se faire
+    setTimeout(() => {
+      this.isClicking = false;
+    }, 300);
+  }
 }
