@@ -43,6 +43,7 @@ export class Competences implements AfterViewInit {
         { file: 'kotlin.png', name: 'Kotlin',  folder: 'Back-end' },
         { file: 'sql.png',    name: 'SQL',     folder: 'Back-end' },
         { file: '', name: '', folder: '', isSeparator: true },
+        { file: 'xampp.png', name: 'XAMPP', folder: 'Bdd' },
         { file: 'mysql.png',   name: 'MySQL',   folder: 'Bdd' },
         { file: 'mariadb.png', name: 'MariaDB', folder: 'Bdd' },
         { file: '', name: '', folder: '', isSeparator: true },
