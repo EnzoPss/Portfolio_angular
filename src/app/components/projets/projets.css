@@ -1,3 +1,9 @@
+#titre {
+  text-align: center;
+  padding-top: 80px;
+  color: #c084fc;
+}
+
 #carrousel {
   position: relative;
   display: flex;

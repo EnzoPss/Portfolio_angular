@@ -1,3 +1,9 @@
+h3 {
+  text-align: center;
+  padding: 80px;
+  color: #c084fc;
+}
+
 #competences {
   position: relative;
   padding: 24px;
