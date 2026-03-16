@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  background: rgba(195, 195, 195, 0.15);
+  background: rgba(27, 0, 54, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 0;
@@ -53,7 +53,7 @@
 .profil-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   padding-left: 30px;
 }
 
@@ -68,7 +68,13 @@
 #profil h2 {
   margin: 0 0 4px 0;
   font-size: 1.2rem;
-  color: #64448c;
+  color: #c084fc;
+}
+
+.profil-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 #profil p {

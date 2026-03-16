@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-veille',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './veille.html',
   styleUrl: './veille.css',
 })
 export class Veille {
+  isExpanded = false;
+
+  toggleExpand(): void {
+    this.isExpanded = !this.isExpanded;
+  }
 }

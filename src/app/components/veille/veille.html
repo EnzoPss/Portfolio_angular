@@ -4,7 +4,7 @@
 
       <h3 class="veille-title">Veille Technologique</h3>
 
-      <div class="veille-article">
+      <div class="veille-article" [class.expanded]="isExpanded">
 
         <h2 class="article-title">Évolution des performances de l'IA (2024–2026)</h2>
 
@@ -31,13 +31,9 @@
 
         <div class="section">
           <h4>2. Progrès en programmation <span class="badge">SWE-bench</span></h4>
-          <p>
-            Le benchmark SWE-bench mesure la capacité d'une IA à corriger des bugs dans de vrais projets informatiques sur GitHub.
-          </p>
+          <p>Le benchmark SWE-bench mesure la capacité d'une IA à corriger des bugs dans de vrais projets informatiques sur GitHub.</p>
           <table>
-            <thead>
-              <tr><th>Modèle</th><th>Score</th></tr>
-            </thead>
+            <thead><tr><th>Modèle</th><th>Score</th></tr></thead>
             <tbody>
               <tr><td>Claude 4 Sonnet</td><td class="score">77.2 %</td></tr>
               <tr><td>GPT-5</td><td class="score">74.9 %</td></tr>
@@ -45,40 +41,28 @@
               <tr><td>GPT-4o</td><td class="score">67.3 %</td></tr>
             </tbody>
           </table>
-          <p>
-            Ces résultats signifient que certaines IA peuvent corriger environ <span class="highlight">3 bugs sur 4</span> dans des projets réels.
-          </p>
+          <p>Ces résultats signifient que certaines IA peuvent corriger environ <span class="highlight">3 bugs sur 4</span> dans des projets réels.</p>
         </div>
 
         <div class="section">
           <h4>3. Progrès en sciences <span class="badge">GPQA</span></h4>
-          <p>
-            Le benchmark GPQA contient des questions scientifiques très difficiles, souvent de niveau doctorat.
-          </p>
+          <p>Le benchmark GPQA contient des questions scientifiques très difficiles, souvent de niveau doctorat.</p>
           <table>
-            <thead>
-              <tr><th>Modèle</th><th>Score</th></tr>
-            </thead>
+            <thead><tr><th>Modèle</th><th>Score</th></tr></thead>
             <tbody>
               <tr><td>GPT-5.1</td><td class="score">88.1 %</td></tr>
               <tr><td>Grok 4</td><td class="score">87.5 %</td></tr>
               <tr><td>Gemini 2.5 Pro</td><td class="score">86.4 %</td></tr>
             </tbody>
           </table>
-          <p>
-            Un score supérieur à 85 % signifie que l'IA atteint un niveau proche d'un <span class="highlight">expert humain</span> dans certaines disciplines scientifiques.
-          </p>
+          <p>Un score supérieur à 85 % signifie que l'IA atteint un niveau proche d'un <span class="highlight">expert humain</span> dans certaines disciplines scientifiques.</p>
         </div>
 
         <div class="section">
           <h4>4. Progrès en mathématiques <span class="badge">AIME</span></h4>
-          <p>
-            Le test AIME est une compétition de mathématiques très difficile. Les IA ont connu une progression spectaculaire.
-          </p>
+          <p>Le test AIME est une compétition de mathématiques très difficile. Les IA ont connu une progression spectaculaire.</p>
           <table>
-            <thead>
-              <tr><th>Modèle</th><th>Score</th></tr>
-            </thead>
+            <thead><tr><th>Modèle</th><th>Score</th></tr></thead>
             <tbody>
               <tr><td>GPT-5</td><td class="score">100 %</td></tr>
               <tr><td>Kimi K2</td><td class="score">99.1 %</td></tr>
@@ -99,18 +83,14 @@
         <div class="section">
           <h4>6. Augmentation de la mémoire des modèles</h4>
           <table>
-            <thead>
-              <tr><th>Année</th><th>Contexte maximum</th></tr>
-            </thead>
+            <thead><tr><th>Année</th><th>Contexte maximum</th></tr></thead>
             <tbody>
               <tr><td>2023</td><td class="score">32 000 tokens</td></tr>
               <tr><td>2024</td><td class="score">128 000 tokens</td></tr>
               <tr><td>2025</td><td class="score">1 000 000 tokens</td></tr>
             </tbody>
           </table>
-          <p>
-            Cela permet aux IA d'analyser des documents très longs comme des livres, des rapports scientifiques ou des projets informatiques complets.
-          </p>
+          <p>Cela permet aux IA d'analyser des documents très longs comme des livres, des rapports scientifiques ou des projets informatiques complets.</p>
         </div>
 
         <div class="section">
@@ -121,10 +101,7 @@
             <li>Elles sont moins performantes dans des situations totalement nouvelles</li>
             <li>Elles nécessitent encore une supervision humaine</li>
           </ul>
-          <p>
-            Sur certains tests de programmation totalement nouveaux, les performances peuvent tomber à environ
-            <span class="highlight">20 % de réussite</span>.
-          </p>
+          <p>Sur certains tests de programmation totalement nouveaux, les performances peuvent tomber à environ <span class="highlight">20 % de réussite</span>.</p>
         </div>
 
         <div class="section conclusion">
@@ -136,13 +113,30 @@
             <li>Presque <span class="highlight">100 %</span> en mathématiques</li>
             <li>Capacité à analyser des millions de mots</li>
           </ul>
-          <p>
-            Ces progrès montrent que l'IA devient un outil de plus en plus important dans les domaines
-            de la recherche, de l'ingénierie et de l'éducation.
-          </p>
+          <p>Ces progrès montrent que l'IA devient un outil de plus en plus important dans les domaines de la recherche, de l'ingénierie et de l'éducation.</p>
         </div>
 
+        <!-- Dégradé de troncature -->
+        <div class="fade-overlay" *ngIf="!isExpanded"></div>
+
       </div>
+
+      <!-- Bouton expand -->
+      <button class="expand-btn" (click)="toggleExpand()">
+        <span *ngIf="!isExpanded">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+          </svg>
+          Lire la suite
+        </span>
+        <span *ngIf="isExpanded">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+          </svg>
+          Réduire
+        </span>
+      </button>
+
     </div>
   </div>
 </div>

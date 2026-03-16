@@ -1,61 +1,88 @@
 <div id="projets">
-
-    <h3 id="titre">Projets</h3>
-
-    <div id="carrousel">
+  <h3 id="titre">Projets</h3>
+  <div id="carrousel">
     <div class="carousel-track">
-        @for (card of visibleCards; track card.id) {
+      @for (card of visibleCards; track card.id) {
         <div
-            class="carousel-card"
-            [class.active]="card.position === 0"
-            [class.side-1]="card.position === 1 || card.position === -1"
-            [class.side-2]="card.position === 2 || card.position === -2"
-            (click)="goTo(card.position)"
+          class="carousel-card"
+          [class.active]="card.position === 0"
+          [class.side-1]="card.position === 1 || card.position === -1"
+          [class.side-2]="card.position === 2 || card.position === -2"
+          (click)="goTo(card.position)"
         >
-            <ng-container *ngTemplateOutlet="cardTemplates[card.index]" />
+          <ng-container *ngTemplateOutlet="cardTemplates[card.index]" />
         </div>
-        }
+      }
     </div>
-    </div>
+  </div>
 
-    <!-- =============================================
-        EDITEZ VOS CARDS ICI
-        ============================================= -->
+  <!-- =============================================
+       EDITEZ VOS CARDS ICI
+       ============================================= -->
+  <ng-template #card0>
+    <img src="img/projets/ECommerce.png" alt="Projet 1">
+    <h3>E-Commerce<br>(projet de seconde année de BTS)</h3>
+    <a href="https://github.com/EnzoPss/Projet_Ecommerce" target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
-    <ng-template #card0>
-    <img src="#" alt="Card 1">
-    <h3>Card 1</h3>
-    <p>Description de la card 1</p>
-    </ng-template>
+  <ng-template #card1>
+    <img src="img/projets/KotlinMonster.png" alt="Projet 2">
+    <h3>KotlinMonster<br>(projet de seconde année de BTS)</h3>
+    <a href="https://github.com/EnzoPss/KotlinMonster" target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
-    <ng-template #card1>
-    <img src="#" alt="Card 2">
-    <h3>Card 2</h3>
-    <p>Description de la card 2</p>
-    </ng-template>
+  <ng-template #card2>
+    <img src="img/projets/GeoWorld.png" alt="Projet 3">
+    <h3>Géoworld<br>(projet de permière année de BTS)</h3>
+    <a href="https://github.com/EnzoPss/geoworld2520_main" target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
-    <ng-template #card2>
-    <img src="#" alt="Card 3">
-    <h3>Card 3</h3>
-    <p>Description de la card 3</p>
-    </ng-template>
+  <ng-template #card3>
+    <img src="img/projets/MovieDB.png" alt="Projet 4">
+    <h3>MovieDB<br>(projet de permière année de BTS)</h3>
+    <a href="https://github.com/EnzoPss/MovieDB" target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
-    <ng-template #card3>
-    <img src="#" alt="Card 4">
-    <h3>Card 4</h3>
-    <p>Description de la card 4</p>
-    </ng-template>
+  <ng-template #card4>
+    <img src="img/projets/projet5.png" alt="Projet 5">
+    <h3>Nom du projet 5</h3>
+    <a href="https://github.com/..." target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
-    <ng-template #card4>
-    <img src="#" alt="Card 5">
-    <h3>Card 5</h3>
-    <p>Description de la card 5</p>
-    </ng-template>
-
-    <ng-template #card5>
-    <img src="#" alt="Card 6">
-    <h3>Card 6</h3>
-    <p>Description de la card 6</p>
-    </ng-template>
+  <ng-template #card5>
+    <img src="img/projets/projet6.png" alt="Projet 6">
+    <h3>Nom du projet 6</h3>
+    <a href="https://github.com/..." target="_blank" class="card-btn" (click)="$event.stopPropagation()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+      </svg>
+      Voir le dépôt
+    </a>
+  </ng-template>
 
 </div>
