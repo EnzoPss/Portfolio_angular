@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './veille.css',
 })
 export class Veille {
-
 }

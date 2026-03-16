@@ -21,8 +21,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   transition: width 0.4s ease, padding 0.4s ease;
-  scrollbar-width: thin;
-  scrollbar-color: #c084fc rgba(255,255,255,0.05);
+  scrollbar-width: none;
 }
 
 /* État réduit */
@@ -144,26 +143,4 @@ nav ul li a span {
   border-color: #c084fc;
   box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
   background: rgba(192, 132, 252, 0.2);
-}
-
-/* ===============================
-   SCROLLBAR
-   =============================== */
-.sidebar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: #c084fc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(192,132,252,0.8);
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #a855f7;
 }
