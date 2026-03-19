@@ -24,7 +24,6 @@
   max-width: 700px;
 }
 
-/* La ligne verticale */
 .timeline::before {
   content: '';
   position: absolute;
@@ -48,7 +47,6 @@
   margin: -10px 0;
 }
 
-/* Point sur la ligne */
 .timeline-dot {
   width: 14px;
   height: 14px;
@@ -81,7 +79,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Alterner gauche/droite */
 .timeline-item:nth-child(even) .timeline-card {
   margin-right: 0;
   margin-left: calc(50% + 30px);
@@ -139,8 +136,9 @@
   50%       { transform: translateY(-6px); }
 }
 
-
-/* État initial — cachées hors écran */
+/* ===============================
+   ANIMATIONS SCROLL
+   =============================== */
 .timeline-item:nth-child(odd) .timeline-card {
   opacity: 0;
   transform: translateX(-120px);
@@ -167,6 +165,38 @@
 .timeline-item:nth-child(2) .timeline-card { transition-delay: 0.4s; }
 .timeline-item:nth-child(3) .timeline-card { transition-delay: 0.8s; }
 
+/* ===============================
+   BOUTONS STAGE
+   =============================== */
+.stage-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.stage-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  background: rgba(123, 47, 255, 0.08);
+  color: #7b2fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.stage-btn:hover {
+  border-color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+  color: #7b2fff;
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+}
 
 /* ===============================
    MODALE
@@ -214,10 +244,20 @@
   padding-right: 24px;
 }
 
-.modal-close {
+/* ===============================
+   ACTIONS MODALE
+   =============================== */
+.modal-actions {
   position: absolute;
   top: 16px;
   right: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-close {
   background: none;
   border: none;
   font-size: 1.1rem;
@@ -229,6 +269,20 @@
 }
 
 .modal-close:hover {
+  color: #7b2fff;
+}
+
+.modal-back {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-back:hover {
   color: #7b2fff;
 }
 

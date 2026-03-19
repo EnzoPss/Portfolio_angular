@@ -12,5 +12,10 @@ export class Veille {
 
   toggleExpand(): void {
     this.isExpanded = !this.isExpanded;
+
+    if (!this.isExpanded) {
+      const veille = document.getElementById('veille');
+      veille?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
