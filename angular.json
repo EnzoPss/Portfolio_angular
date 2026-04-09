@@ -94,7 +94,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/Portfolio_angular/",
+            "dir": "dist/Portfolio_angular/browser"
+          }
+          
         }
       }
     }

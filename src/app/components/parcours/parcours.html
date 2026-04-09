@@ -38,8 +38,84 @@
 
 <!-- ======= CONTENUS DES MODALES (éditez ici) ======= -->
 <ng-template #modalBts>
-  <h2>BTS SIO - SLAM (2024 - 2026)</h2>
-  <p>Description du bts..<br><br></p>
+  <div class="modal-content">
+
+  <div class="modal-header">
+    <h2>BTS SIO</h2>
+    <p>Services Informatiques aux Organisations</p>
+  </div>
+
+  <div class="modal-body">
+
+    <section>
+      <h3>Présentation</h3>
+      <p>
+        Le BTS SIO est un diplôme national de niveau Bac +2, accessible après le baccalauréat.
+        La formation dure 2 ans en initiale ou en alternance, et prépare des techniciens capables
+        de concevoir, déployer et maintenir des solutions informatiques adaptées aux besoins des entreprises.
+      </p>
+    </section>
+
+    <section>
+      <h3>Informations générales</h3>
+      <ul>
+        <li><strong>Niveau :</strong> Bac +2 (Niveau 5)</li>
+        <li><strong>Durée :</strong> 2 ans</li>
+        <li><strong>Accès :</strong> Après le Baccalauréat</li>
+        <li><strong>Rythme :</strong> Formation initiale ou alternance</li>
+        <li><strong>Poursuite d'études :</strong> Licence Pro, Bachelor, BUT…</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Option A — SLAM</h3>
+      <p><em>Solutions Logicielles et Applications Métiers</em></p>
+      <p>
+        Orientée développement logiciel et applicatif. Conception, codage, test et déploiement
+        d'applications répondant aux besoins fonctionnels des organisations.
+      </p>
+      <ul>
+        <li>Développement web &amp; mobile</li>
+        <li>Programmation orientée objet</li>
+        <li>Bases de données &amp; SQL</li>
+        <li>Conception UML / Merise</li>
+        <li>Tests &amp; maintenance applicative</li>
+        <li>Intégration continue (CI/CD)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Option B — SISR</h3>
+      <p><em>Solutions d'Infrastructure, Systèmes et Réseaux</em></p>
+      <p>
+        Orientée administration systèmes et réseaux. Installation, configuration, sécurisation
+        et supervision des infrastructures informatiques des entreprises.
+      </p>
+      <ul>
+        <li>Administration Linux / Windows Server</li>
+        <li>Réseaux (TCP/IP, VLAN, routage)</li>
+        <li>Sécurité informatique &amp; cybersécurité</li>
+        <li>Virtualisation (VMware, Hyper-V)</li>
+        <li>Cloud &amp; services managés</li>
+        <li>Supervision &amp; monitoring</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Débouchés professionnels</h3>
+      <ul>
+        <li>Développeur web / mobile / logiciel</li>
+        <li>Administrateur réseau</li>
+        <li>Technicien cybersécurité</li>
+        <li>Technicien support N2/N3</li>
+        <li>Cloud Technician</li>
+        <li>Analyste / Intégrateur ERP-CRM</li>
+      </ul>
+    </section>
+    <br>
+  </div>
+
+  </div>
   <h2>Stages</h2>
   <div class="stage-buttons">
     <button class="stage-btn" (click)="openModal(modalStage1, $event, modalBts)">
@@ -70,13 +146,126 @@
 </ng-template>
 
 <ng-template #modalBac>
-  <h2>Baccalauréat (2021 - 2024)</h2>
-  <p>Description de mon bac général..</p>
+  <div class="modal-content">
+
+  <div class="modal-header">
+    <h2>Baccalauréat Général</h2>
+    <p>Voie générale — Spécialités Mathématiques & NSI</p>
+  </div>
+
+  <div class="modal-body">
+
+    <section>
+      <h3>Présentation</h3>
+      <p>
+        Le Baccalauréat Général est un diplôme national de niveau Bac (niveau 4), obtenu en fin de
+        lycée après 3 ans de formation (Seconde, Première, Terminale). Il permet d'accéder à
+        l'enseignement supérieur et offre la possibilité de choisir des spécialités en lien avec
+        son projet d'orientation.
+      </p>
+    </section>
+
+    <section>
+      <h3>Informations générales</h3>
+      <ul>
+        <li><strong>Niveau :</strong> Bac (Niveau 4)</li>
+        <li><strong>Durée :</strong> 3 ans (Seconde → Première → Terminale)</li>
+        <li><strong>Spécialités choisies :</strong> Mathématiques et NSI</li>
+        <li><strong>Poursuite d'études :</strong> BTS, BUT, Licence, Classes prépa…</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Spécialité — Mathématiques</h3>
+      <p>
+        Approfondissement des notions mathématiques fondamentales, avec un accent sur le raisonnement
+        logique, la démonstration et la modélisation.
+      </p>
+      <ul>
+        <li>Algèbre &amp; analyse (fonctions, suites, dérivées)</li>
+        <li>Probabilités &amp; statistiques</li>
+        <li>Géométrie dans l'espace</li>
+        <li>Raisonnement par récurrence</li>
+        <li>Algorithmique &amp; Python</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Spécialité — NSI</h3>
+      <p><em>Numérique et Sciences Informatiques</em></p>
+      <p>
+        Introduction aux fondements théoriques et pratiques de l'informatique, de la programmation
+        et des réseaux.
+      </p>
+      <ul>
+        <li>Programmation en Python</li>
+        <li>Structures de données (listes, arbres, graphes)</li>
+        <li>Algorithmique &amp; complexité</li>
+        <li>Bases de données &amp; SQL</li>
+        <li>Réseaux &amp; protocoles (HTTP, TCP/IP)</li>
+        <li>Architecture matérielle &amp; système d'exploitation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Débouchés après le Bac</h3>
+      <ul>
+        <li>BTS SIO, BTS CIEL…</li>
+        <li>BUT Informatique, BUT Réseaux &amp; Télécommunications</li>
+        <li>Licence Informatique / Mathématiques</li>
+        <li>Classes préparatoires (MPSI, PCSI…)</li>
+        <li>Écoles d'ingénieurs (post-bac)</li>
+      </ul>
+    </section>
+
+  </div>
+
+  </div>
 </ng-template>
 
 <ng-template #modalCollege>
-  <h2>Collège (2017 - 2021)</h2>
-  <p>Description college..</p>
+  <div class="modal-content">
+
+  <div class="modal-header">
+    <h2>Collège Général</h2>
+    <p>Enseignement secondaire — Cycle 3 &amp; Cycle 4</p>
+  </div>
+
+  <div class="modal-body">
+
+    <section>
+      <h3>Présentation</h3>
+      <p>
+        Le collège est la première étape de l'enseignement secondaire en France. Il accueille les
+        élèves de la 6ème à la 3ème et se conclut par l'obtention du Brevet des Collèges (DNB).
+      </p>
+    </section>
+
+    <section>
+      <h3>Informations générales</h3>
+      <ul>
+        <li><strong>Niveau :</strong> Brevet (Niveau 3)</li>
+        <li><strong>Durée :</strong> 4 ans (6ème → 5ème → 4ème → 3ème)</li>
+        <li><strong>Diplôme :</strong> Diplôme National du Brevet (DNB)</li>
+        <li><strong>Poursuite d'études :</strong> Lycée général, technologique ou professionnel</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Matières principales</h3>
+      <ul>
+        <li>Français &amp; Littérature</li>
+        <li>Mathématiques</li>
+        <li>Histoire-Géographie &amp; EMC</li>
+        <li>Sciences (SVT, Physique-Chimie)</li>
+        <li>Langues vivantes (LV1, LV2)</li>
+        <li>Technologie &amp; Arts plastiques</li>
+      </ul>
+    </section>
+
+  </div>
+
+  </div>
 </ng-template>
 
 <!-- ======= MODALE ======= -->

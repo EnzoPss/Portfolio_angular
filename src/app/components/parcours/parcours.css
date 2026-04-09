@@ -229,7 +229,13 @@
   border: 1px solid rgba(192, 132, 252, 0.35);
   box-shadow: 0 20px 60px rgba(123, 47, 255, 0.2);
   position: relative;
+  overflow-y: auto;
+  scrollbar-width: none;
   animation: slideUp 0.25s ease;
+}
+
+.modal-box::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes slideUp {
@@ -238,9 +244,10 @@
 }
 
 .modal-box h2 {
-  margin: 0 0 16px;
-  font-size: 1.15rem;
+  margin: 0 0 4px;
+  font-size: 1.25rem;
   color: #1a1a2e;
+  font-weight: 700;
   padding-right: 24px;
 }
 
@@ -287,30 +294,99 @@
 }
 
 .modal-body {
-  overflow-y: auto;
+  overflow-y: visible;
   flex: 1;
-  padding-right: 6px;
-  scrollbar-width: thin;
-  scrollbar-color: #c084fc transparent;
-}
-
-.modal-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-  background: #c084fc;
-  border-radius: 10px;
+  min-height: 0;
 }
 
 .modal-body p {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 0.9rem;
   color: #444;
   line-height: 1.75;
-  white-space: pre-line;
+}
+
+/* ===============================
+   CONTENU MODAL — HEADER
+   =============================== */
+.modal-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(192, 132, 252, 0.25);
+}
+
+.modal-header h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.modal-header p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #7b2fff;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ===============================
+   CONTENU MODAL — SECTIONS
+   =============================== */
+.modal-body section {
+  margin-bottom: 20px;
+}
+
+.modal-body section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-body h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #7b2fff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.modal-body ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-body ul li {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.modal-body ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #c084fc;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.modal-body ul li strong {
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.modal-body em {
+  font-size: 0.82rem;
+  color: #888;
+  font-style: italic;
+  display: block;
+  margin-bottom: 8px;
 }
