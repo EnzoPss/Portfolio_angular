@@ -108,6 +108,13 @@
   text-align: center;
 }
 
+.carousel-card h3 i {
+  margin: 0;
+  font-size: 0.70rem;
+  color: #5700ad;
+  text-align: center;
+}
+
 /* ===============================
    BOUTON DÉPÔT
    =============================== */
